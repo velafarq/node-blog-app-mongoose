@@ -14,6 +14,10 @@ const app = express();
 app.use(express.json());
 app.use(morgan('common'));
 
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/views/index.html');
+  });
+
 app.get('/posts', (req, res) => {
     Post
     .find()
